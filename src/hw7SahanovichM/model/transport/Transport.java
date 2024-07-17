@@ -23,130 +23,93 @@ public abstract class Transport {
     public String getDefModel() {
         return defModel;
     }
-
     public String getModel() {
         return model;
     }
-
     public void setModel(String model) {
         this.model = model.isEmpty() ? this.getDefModel() : model;
     }
 
-
-
     public Engine getEngine() {
         return engine;
     }
-
     public void setEngine(Engine engine) {
         this.engine = engine;
     }
 
-
-
     public Battery getBattery() {
         return battery;
     }
-
     public void setBattery(Battery battery) {
         this.battery = battery;
     }
 
-
-
     public Radiator getRadiator() {
         return radiator;
     }
-
     public void setRadiator(Radiator radiator) {
         this.radiator = radiator;
     }
 
-
-
     public String getDefOil() {
         return defOil;
     }
-
     public String getOil() {
         return oil;
     }
-
     public void setOil(String oil) {
         this.oil = oil.isEmpty() ? this.getDefOil() : oil;
     }
 
-
-
     public int getDefHeight() {
         return defHeight;
     }
-
     public int getHeight() {
         return height;
     }
-
     public void setHeight(int height) {
         this.height = height < 0 ? this.getDefHeight() : height;
     }
 
-
-
-
     public float getDefWeight() {
         return defWeight;
     }
-
     public float getWeight() {
         return weight;
     }
-
     public void setWeight(float weight) {
         this.weight = weight < 0 ? this.getDefWeight() : weight ;
     }
 
-
-
     public int getDefTrunkCapacity() {
         return defTrunkCapacity;
     }
-
     public int getTrunkCapacity() {
         return trunkCapacity;
     }
-
     public void setTrunkCapacity(int trunkCapacity) {
         this.trunkCapacity = trunkCapacity < 0 ? this.getDefTrunkCapacity() : trunkCapacity;
     }
 
-
-
     public int getDefMaxSpeed() {
         return defMaxSpeed;
     }
-
     public int getMaxSpeed() {
         return maxSpeed;
     }
-
     public void setMaxSpeed(int maxSpeed) {
         this.maxSpeed = maxSpeed < 0 ? this.getDefMaxSpeed() : maxSpeed;
     }
 
-
-
     public int getDefSeats() {
         return defSeats;
     }
-
     public int getSeats() {
         return seats;
     }
-
     public void setSeats(int seats) {
         this.seats = seats < 0 ? this.getDefSeats() : seats;
     }
-
 
 
     public Transport(String model) {

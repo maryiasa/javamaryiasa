@@ -1,10 +1,14 @@
 package hw7SahanovichM.main;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import hw7SahanovichM.model.student.Student;
 
 import java.util.*;
 
 public class StudentMain {
+
+    private static final Logger LOGGER = LogManager.getLogger(StudentMain.class);
 
     public static void main(String[] args) {
         Student studentI = new Student("Ivanov Ivan");
@@ -20,12 +24,12 @@ public class StudentMain {
         studentLList.add(studentS);
         studentLList.add(studentF);
 
-        System.out.println(studentLList);
+        LOGGER.info(studentLList);
         studentLList.removeFirst();
-        System.out.println(studentLList.get(2));
+        LOGGER.info(studentLList.get(2));
         studentLList.remove(studentF);
         studentLList.remove(1);
-        System.out.println(studentLList);
+        LOGGER.info(studentLList);
 
 
         List<Student> aList = new ArrayList<>();
@@ -35,12 +39,12 @@ public class StudentMain {
         aList.add(new Student("Filimonov Filya"));
         aList.add(new Student("Filimonov Fenya", 27));
 
-        System.out.println("ArrayList " + aList);
+        LOGGER.info("ArrayList " + aList);
 
         aList.removeIf(n -> n.getStudentAge() < 18);
 
-        System.out.println("ArrayList " + aList);
-        System.out.println(aList.getFirst());
+        LOGGER.info("ArrayList " + aList);
+        LOGGER.info(aList.getFirst());
 
 
         Set<Student> hashSet = new HashSet<>();
@@ -56,12 +60,12 @@ public class StudentMain {
         deleteStudents.add(studentF);
         deleteStudents.add(studentFF);
 
-        System.out.println(deleteStudents);
-        System.out.println(hashSet);
+        LOGGER.info(deleteStudents);
+        LOGGER.info(hashSet);
         hashSet.remove(studentI);
-        System.out.println(hashSet);
+        LOGGER.info(hashSet);
         hashSet.removeAll(deleteStudents);
-        System.out.println(hashSet);
+        LOGGER.info(hashSet);
 
 
         Set<Student> linkedHashSet = new LinkedHashSet();
@@ -69,12 +73,12 @@ public class StudentMain {
         linkedHashSet.add(studentS);
         linkedHashSet.add(studentFF);
         linkedHashSet.add(studentF);
-        System.out.println(linkedHashSet);
+        LOGGER.info(linkedHashSet);
         linkedHashSet.add(studentA);
         linkedHashSet.add(studentI);
 
-        System.out.println(linkedHashSet.remove(studentF));
-        System.out.println(linkedHashSet);
+        LOGGER.info(linkedHashSet.remove(studentF));
+        LOGGER.info(linkedHashSet);
 
 
         Set<Student> treeSet = new TreeSet<>();
@@ -85,15 +89,15 @@ public class StudentMain {
         treeSet.add(studentI);
         treeSet.add(studentS);
 
-        System.out.println(treeSet);
+        LOGGER.info(treeSet);
 
-        System.out.println(treeSet.isEmpty());
+        LOGGER.info(treeSet.isEmpty());
         treeSet.remove(studentF);
-        System.out.println(treeSet);
-        System.out.println("test");
-        System.out.println(studentS.getStudentFullName().compareTo(studentI.getStudentFullName()));
-        System.out.println(studentI.getStudentFullName().compareTo(studentS.getStudentFullName()));
-        System.out.println(studentI.getStudentFullName().compareTo(studentI.getStudentFullName()));
+        LOGGER.info(treeSet);
+        LOGGER.info("test");
+        LOGGER.info(studentS.getStudentFullName().compareTo(studentI.getStudentFullName()));
+        LOGGER.info(studentI.getStudentFullName().compareTo(studentS.getStudentFullName()));
+        LOGGER.info(studentI.getStudentFullName().compareTo(studentI.getStudentFullName()));
 
     }
 }

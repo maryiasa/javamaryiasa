@@ -1,10 +1,16 @@
 package hw4SahanovichM;
 
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.util.Arrays;
 
+
 public class StringMethods {
+
+    private static final Logger LOGGER = LogManager.getLogger(StringMethods.class);
+    
     public static void main(String[] args) {
+        
         String firstName = "Maria";
         String lastName = "Sahanovich";
         String lastName2 = "sahanovich";
@@ -15,28 +21,29 @@ public class StringMethods {
 
         char[] charArray = lastName.toCharArray();
 
-        System.out.println(charArray);
-        System.out.println(fullName);
-        System.out.println(client);
-        System.out.println(firstName.length());
-        System.out.println(lastName.charAt(6));
-        System.out.println(lastName.equals(lastName2));
-        System.out.println(lastName.equalsIgnoreCase(lastName2));
-        System.out.println(jobName.toLowerCase());
-        System.out.println(firstName.toUpperCase());
-        System.out.println(lastName.indexOf("ha"));
-        System.out.println(jobName.startsWith("MP"));
-        System.out.println(jobName.endsWith("7"));
-        System.out.println(firstName.replace("i", "yi"));
-        System.out.println(jobName.substring(2));
-        System.out.println(String.join(" ", firstName, lastName));
-        System.out.println(Arrays.toString(client.split(" ")));
+        LOGGER.info(charArray);
+       
+        LOGGER.info(fullName);
+        LOGGER.info(client);
+        LOGGER.info(firstName.length());
+        LOGGER.info(lastName.charAt(6));
+        LOGGER.info(lastName.equals(lastName2));
+        LOGGER.info(lastName.equalsIgnoreCase(lastName2));
+        LOGGER.info(jobName.toLowerCase());
+        LOGGER.info(firstName.toUpperCase());
+        LOGGER.info(lastName.indexOf("ha"));
+        LOGGER.info(jobName.startsWith("MP"));
+        LOGGER.info(jobName.endsWith("7"));
+        LOGGER.info(firstName.replace("i", "yi"));
+        LOGGER.info(jobName.substring(2));
+        LOGGER.info(String.join(" ", firstName, lastName));
+        LOGGER.info(Arrays.toString(client.split(" ")));
 
         //home task:
         String a = "asadbut"; // "asadbut", "leetcode"
         String b = "sad"; //"sad", "leeto"
         if (a.contains(b)){
-            System.out.println(a.indexOf(b));
-        } else System.out.println(-1);
+            LOGGER.info(a.indexOf(b));
+        } else LOGGER.info(-1);
     }
 }

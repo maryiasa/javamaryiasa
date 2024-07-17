@@ -1,5 +1,7 @@
 package hw7SahanovichM.model.transport;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import hw7SahanovichM.interfaces.IControl;
 import hw7SahanovichM.interfaces.IFillUp;
 import hw7SahanovichM.interfaces.IService;
@@ -7,6 +9,8 @@ import hw7SahanovichM.interfaces.IService;
 import java.util.Objects;
 
 public final class Car extends Transport implements IControl, IService, IFillUp {
+
+    private static final Logger LOGGER = LogManager.getLogger(Car.class);
 
     public Car(String model, float weight, int maxSpeed, int seats, Engine engine, Battery battery, Radiator radiator) {
         super(model, weight, maxSpeed, seats, engine, battery, radiator);
@@ -31,17 +35,17 @@ public final class Car extends Transport implements IControl, IService, IFillUp 
 
     @Override
     public void hitTheBrakes() {
-        System.out.println("Car stopped");
+        LOGGER.info("Car stopped");
     }
 
     @Override
     public void turnOnLeftTurnSignal() {
-        System.out.println("Left turn signal is turned on");
+        LOGGER.info("Left turn signal is turned on");
     }
 
     @Override
     public void turnOffLeftTurnSignal() {
-        System.out.println("Left turn signal is turned off");
+        LOGGER.info("Left turn signal is turned off");
     }
 
     @Override
@@ -49,7 +53,7 @@ public final class Car extends Transport implements IControl, IService, IFillUp 
         if (this.getModel().equals("Genesis G80")) {
             engine.setGasoline("Gasoline 95");
         }
-        System.out.println(engine.getGasoline());
+        LOGGER.info(engine.getGasoline());
     }
 
     @Override
@@ -57,7 +61,7 @@ public final class Car extends Transport implements IControl, IService, IFillUp 
         if (this.getModel().equals("Genesis G80")) {
             super.setOil("MOTUL 5W40");
         }
-        System.out.println(getOil());
+        LOGGER.info(getOil());
     }
 
     @Override

@@ -1,6 +1,12 @@
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.Arrays;
 
-public class Hw2SahanovichM {
+public class Hw2SahanovichMain {
+
+    private static final Logger LOGGER = LogManager.getLogger(Hw2SahanovichMain.class);
+
     public static void main(String[] args) {
         int dayOfWeek = 1;
         int time = 13;
@@ -17,20 +23,20 @@ public class Hw2SahanovichM {
 
 
         if (dayOfWeek == 1) {
-            System.out.println("Today is Mon: you have a Java lesson.");
+            LOGGER.info("Today is Mon: you have a Java lesson.");
         } else if (dayOfWeek == 3) {
-            System.out.println("Today is Wed: you have a Java lesson.");
+            LOGGER.info("Today is Wed: you have a Java lesson.");
         } else {
-            System.out.println("Today is not Mon or Wed: you have nothing scheduled.");
+            LOGGER.info("Today is not Mon or Wed: you have nothing scheduled.");
         }
 
         do {
-            System.out.println(orderId);
+            LOGGER.info(orderId);
             orderId++;
         } while (orderId <= 100);
 
         while (clientNumber < 15) {
-            System.out.println("You are our " + clientNumber + " client");
+            LOGGER.info("You are our " + clientNumber + " client");
             clientNumber++;
         }
 
@@ -38,50 +44,50 @@ public class Hw2SahanovichM {
             if (ind >= 12) {
                 ind = 0;
             }
-            System.out.println(startDate + ": you are " + zodiacSignsCh[ind]);
+            LOGGER.info(startDate + ": you are " + zodiacSignsCh[ind]);
             ind++;
         }
 
         if (isChinese) {
-            System.out.println(Arrays.toString(zodiacSignsCh));
+            LOGGER.info(Arrays.toString(zodiacSignsCh));
         } else {
-            System.out.println(Arrays.toString(zodiacSignsEu));
+            LOGGER.info(Arrays.toString(zodiacSignsEu));
         }
 
         if (dayOfWeek == 1 | dayOfWeek == 3) {
             if (time >= 9 & time <= 12) {
-                System.out.println("You are busy");
+                LOGGER.info("You are busy");
             }
         }
 
         if (isChinese) {
-            System.out.println("You are Asian");
+            LOGGER.info("You are Asian");
         }
 
         switch (timeSlot) {
             case 1:
-                System.out.println("TRX");
+                LOGGER.info("TRX");
             case 2:
-                System.out.println("STRETCH");
+                LOGGER.info("STRETCH");
             case 3:
-                System.out.println("LOWER BODY");
+                LOGGER.info("LOWER BODY");
             case 4:
-                System.out.println("50+");
+                LOGGER.info("50+");
             case 5:
-                System.out.println("PILATES");
+                LOGGER.info("PILATES");
             case 6:
-                System.out.println("FULL BODY");
+                LOGGER.info("FULL BODY");
             case 7:
-                System.out.println("DANCE MIX");
+                LOGGER.info("DANCE MIX");
             case 8:
-                System.out.println("CARDIO");
+                LOGGER.info("CARDIO");
                 break;
             default:
-                System.out.println("We are closed");
+                LOGGER.info("We are closed");
         }
 
         for (int i = 5; i >= 5 & i <= 7; i++ ) {
-            System.out.println(zodiacSignsEu[i] + " is a summer sign");
+            LOGGER.info(zodiacSignsEu[i] + " is a summer sign");
         }
 
     }
