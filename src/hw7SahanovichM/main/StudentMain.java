@@ -1,5 +1,6 @@
 package hw7SahanovichM.main;
 
+import hw7SahanovichM.interfaces.IRemoveStudent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import hw7SahanovichM.model.student.Student;
@@ -41,11 +42,12 @@ public class StudentMain {
 
         LOGGER.info("ArrayList " + aList);
 
-        aList.removeIf(n -> n.getStudentAge() < 18);
+        IRemoveStudent remover = l -> l.removeIf(n -> n.getStudentAge() < 18);
 
-        LOGGER.info("ArrayList " + aList);
+        remover.removeStudent((ArrayList<Student>) aList);
+
+        LOGGER.info("Updated ArrayList " + aList);
         LOGGER.info(aList.getFirst());
-
 
         Set<Student> hashSet = new HashSet<>();
 
