@@ -1,6 +1,8 @@
 package hw7SahanovichM.model.student;
 
-public class Student implements Comparable<Student>{
+import java.util.Comparator;
+
+public class Student implements Comparable<Student>, Comparator<Student> {
     private String studentFullName;
     private int studentAge;
 
@@ -39,8 +41,22 @@ public class Student implements Comparable<Student>{
 
     @Override
     public int compareTo(Student o) {
+        if (studentFullName.compareTo(o.studentFullName) == 0) {
+            if (this.studentAge == o.studentAge) {
+                return 0;
+            }
+        }
         return studentFullName.compareTo(o.studentFullName);
+
     }
 
-
+    @Override
+    public int compare(Student o1, Student o2) {
+        if (o1.studentAge == o2.studentAge) {
+            return 0;
+        } else if (o1.studentAge < o2.studentAge) {
+            return -1;
+        }
+        return 1;
+    }
 }
